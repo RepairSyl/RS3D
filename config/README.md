@@ -6,5 +6,5 @@
     configuration marlin 2.0.x pour Cheetah V1.2x 
     changement:
         - langue mis en francais
-        - configuration bltouch V3.x
+        - configuration BLTouch_V3.x(en cours)
         - creation du .hex
