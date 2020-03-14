@@ -1,6 +1,10 @@
 # RS3D config Cheetah V1.2x
 ## Procedure
-    Copier/coller les fichier Configuration_adv.h et Configuration.h et les placer dans le dossier Marlin
+    - Copier/coller les fichier Configuration_adv.h et Configuration.h du dossier  config et les placer dans le dossier Marlin
+    - Modifier dans le fichier platformio.ini le "default_envs = megaatmega2560" par default_envs = STM32F103RC_fysetc
+
+#### 14/03/2020
+    Mise a jour avec la version 2.0.5
 
 #### 04/03/2020
     configuration marlin 2.0.x pour Cheetah V1.2x 
