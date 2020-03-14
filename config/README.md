@@ -1,10 +1,3 @@
-# RS3D config Cheetah V1.2x
-## Procedure
-    Copier/coller les fichier Configuration_adv.h et Configuration.h et les placer dans le dossier Marlin
+# Where have all the configurations gone?
 
-#### 04/03/2020
-    configuration marlin 2.0.x pour Cheetah V1.2x 
-    changement:
-        - langue mis en francais
-        - configuration BLTouch_V3.x(en cours)
-        - creation du .hex
+## https://github.com/MarlinFirmware/Configurations/archive/release-2.0.4.zip
