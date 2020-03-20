@@ -1,7 +1,22 @@
 # RS3D config SKR Mini E3 1.2
-## Procedure
+
+## Les configs
+
+  Config|Bauds|Lang|Fil. Chg.|Lin.Adcanced|ABL
+  --------|---|---|---|---|---
+    Base|115200|FR|oui|oui k=0.0|Mesh bed
+    Touchmi_10|115200|FR|oui|oui k=0.0|BILINEAR
+    Touchmi_20|115200|FR|oui|oui k=0.0|BILINEAR 
+    Bltouch|115200|FR|oui|oui k=0.0|Mesh BILINEAR
+
+### Procedure 
+    - dans le dossier marlin ce trouve la version de base
+    Si vous souhaiter changer de config il suffit de remplacer les fichier par la config que vous souhitez modifier. 
     - Copier/coller les fichier Configuration_adv.h et Configuration.h du dossier  config et les placer dans le dossier Marlin
-    - Modifier dans le fichier platformio.ini le "default_envs = megaatmega2560" par default_envs = STM32F103RC_btt_512K
+    
+
+#### 20/03/2020
+
 
 #### 14/03/2020
     Mise a jour avec la version 2.0.5
