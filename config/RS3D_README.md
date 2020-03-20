@@ -2,14 +2,8 @@
 
 ## Les configs
 
-  Config|Bauds|Lang|Fil. Chg.|Lin.Adcanced|ABL||Pour
-  --------|---|---|---|---|---|---
-  Base|115200|FR|oui|oui k=0.0|Mesh bed
-  Touchmi_10|115200|FR|oui|oui k=0.0|BILINEAR|Ender3 pro
-  Touchmi_20|115200|FR|oui|oui k=0.0|BILINEAR|Ender3
-  Bltouch|115200|FR|oui|oui k=0.0| BILINEAR
-    
-    Option|Base|Touchmi_10|Touchmi_20|Bltouch|
+   
+    Option|Base|Touchmi_10|Touchmi_20|Bltouch
     --------|---|---|---|---
     PID_EDIT_MENU|OUI|OUI|OUI|OUI
     PID_AUTOTUNE_MENU|OUI|OUI|OUI|OUI
