@@ -11,7 +11,7 @@
  CLASSIC_JERK                   |   OUI    |   OUI    |   OUI    |   OUI    
  S_CURVE_ACCELERATION           |   OUI    |   OUI    |   OUI    |   OUI
  MESH_BED_LEVELING              |   OUI    |   NON    |   NON    |   NON
- AUTO_BED_LEVELING_BILINEAR     |   OUI    |   OUI    |   OUI    |   OUI
+ AUTO_BED_LEVELING_BILINEAR     |   NON    |   OUI    |   OUI    |   OUI
  RESTORE_LEVELING_AFTER_G28     |   OUI    |   OUI    |   OUI    |   OUI
  LCD_BED_LEVELING               |   OUI    |   OUI    |   OUI    |   OUI
  LEVEL_BED_CORNERS Z=0.1        |   OUI    |   OUI    |   OUI    |   OUI
