@@ -2,13 +2,13 @@
 
 ## Les configs
 
-  Config|Bauds|Lang|Fil. Chg.|Lin.Adcanced|ABL
+  Config|Bauds|Lang|Fil. Chg.|Lin.Adcanced|ABL|Pour
   --------|---|---|---|---|---
   Base|115200|FR|oui|oui k=0.0|Mesh bed
-  Touchmi_10|115200|FR|oui|oui k=0.0|BILINEAR
-  Touchmi_20|115200|FR|oui|oui k=0.0|BILINEAR 
-  Bltouch|115200|FR|oui|oui k=0.0|Mesh BILINEAR
-  [Arduino AVR](https://www.arduino.cc/)|ATmega|RAMPS, Melzi, RAMBo
+  Touchmi_10|115200|FR|oui|oui k=0.0|BILINEAR|Ender3 pro
+  Touchmi_20|115200|FR|oui|oui k=0.0|BILINEAR|Ender3
+  Bltouch|115200|FR|oui|oui k=0.0| BILINEAR
+  
 
 ### Procedure 
     - dans le dossier marlin ce trouve la version de base
