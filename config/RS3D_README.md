@@ -1,4 +1,5 @@
 # RS3D config SKR Mini E3 1.2
+   Merci de votre soutient https://www.paypal.com/paypalme2/repairsyl
 
 ## Les configs
 
