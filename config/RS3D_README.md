@@ -1,5 +1,5 @@
 # RS3D config Cheetah V1.2x
-    Merci de votre soutient https://www.paypal.com/paypalme2/repairsyl
+Merci de votre soutient https://www.paypal.com/paypalme2/repairsyl
     
 ## Procedure
     - Copier/coller les fichier Configuration_adv.h et Configuration.h du dossier  config et les placer dans le dossier Marlin
