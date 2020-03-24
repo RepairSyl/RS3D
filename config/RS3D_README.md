@@ -1,4 +1,5 @@
 # RS3D config Cheetah V1.1x
+   Merci de votre soutient https://www.paypal.com/paypalme2/repairsyl
 ## Les configs
 
    
