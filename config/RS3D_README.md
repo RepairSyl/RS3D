@@ -39,7 +39,7 @@
     Extrude 100mm   
 
 
-#### 20/03/2020
+#### 24/03/2020
     -mise a jours marlin 2.0.5.1
     -creation config touchmi et bltouch
         MIN_PROBE_EDGE 10 pour ender3pro
