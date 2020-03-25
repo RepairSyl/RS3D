@@ -39,6 +39,8 @@
     Home/Level Bed : fait une home XYZ(G28) + leveling bed (G29)
     Extrude 100mm   
 
+#### 25/03/2020
+Mise a jour avec la version marlin 2.5.0.2
 
 #### 24/03/2020
     -mise a jours marlin 2.0.5.1
