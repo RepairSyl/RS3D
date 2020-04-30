@@ -9,7 +9,6 @@
  PID_EDIT_MENU                  |   OUI    |   OUI    |   OUI    |
  PIDTEMP                        |   OUI    |   OUI    |   OUI    |
  PID_AUTOTUNE_MENU              |   OUI    |   OUI    |   OUI    |
- CLASSIC_JERK                   |   OUI    |   OUI    |   OUI    |  
  S_CURVE_ACCELERATION           |   OUI    |   OUI    |   OUI    |
  MESH_BED_LEVELING              |   OUI    |   NON    |   NON    |
  AUTO_BED_LEVELING_BILINEAR     |   NON    |   OUI    |   OUI    |
@@ -27,7 +26,9 @@
  MONITOR_DRIVER_STATUS          |   OUI    |   OUI    |   OUI    |
  TMC_DEBUG                      |   OUI    |   OUI    |   OUI    |
  CUSTOM_USER_MENUS              |   OUI    |   OUI    |   OUI    |
- 
+ POWER_LOSS_RECOVERY            |   OUI    |   OUI    |   OUI    |
+
+
 ### Procedure 
     - dans le dossier marlin ce trouve la version de base
     Si vous souhaiter changer de config il suffit de remplacer les fichier par la config que vous souhitez modifier. 
@@ -39,6 +40,11 @@
     Home/Preheat ABS : fait une home XYZ(G28) + prechaufe le BED 
     Home/Level Bed : fait une home XYZ(G28) + leveling bed (G29)
     Extrude 100mm   
+
+#### 30/04/2020
+Mise a jour avec la version marlin 2.5.0.3
+BAUDRATE 25000
+POWER_LOSS_RECOVERY
 
 #### 25/03/2020
 Mise a jour avec la version marlin 2.5.0.2
