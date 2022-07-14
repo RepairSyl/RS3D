@@ -153,7 +153,7 @@ void I2CPositionEncoder::update() {
 
     #ifdef I2CPE_ERR_THRESH_ABORT
       if (ABS(error) > I2CPE_ERR_THRESH_ABORT * planner.settings.axis_steps_per_mm[encoderAxis]) {
-        //kill(PSTR("Significant Error"));
+        //kill(F("Significant Error"));
         SERIAL_ECHOLNPGM("Axis error over threshold, aborting!", error);
         safe_delay(5000);
       }
@@ -232,7 +232,7 @@ bool I2CPositionEncoder::passes_test(const bool report) {
   if (report) {
     if (H != I2CPE_MAG_SIG_GOOD) SERIAL_ECHOPGM("Warning. ");
     SERIAL_CHAR(axis_codes[encoderAxis]);
-    serial_ternary(H == I2CPE_MAG_SIG_BAD, PSTR(" axis "), PSTR("magnetic strip "), PSTR("encoder "));
+    serial_ternary(H == I2CPE_MAG_SIG_BAD, F(" axis "), F("magnetic strip "), F("encoder "));
     switch (H) {
       case I2CPE_MAG_SIG_GOOD:
       case I2CPE_MAG_SIG_MID:
@@ -489,7 +489,7 @@ void I2CPositionEncodersMgr::init() {
       encoders[i].set_stepper_ticks(I2CPE_ENC_1_TICKS_REV);
     #endif
     #ifdef I2CPE_ENC_1_INVERT
-      encoders[i].set_inverted(I2CPE_ENC_1_INVERT);
+      encoders[i].set_inverted(ENABLED(I2CPE_ENC_1_INVERT));
     #endif
     #ifdef I2CPE_ENC_1_EC_METHOD
       encoders[i].set_ec_method(I2CPE_ENC_1_EC_METHOD);
@@ -518,7 +518,7 @@ void I2CPositionEncodersMgr::init() {
       encoders[i].set_stepper_ticks(I2CPE_ENC_2_TICKS_REV);
     #endif
     #ifdef I2CPE_ENC_2_INVERT
-      encoders[i].set_inverted(I2CPE_ENC_2_INVERT);
+      encoders[i].set_inverted(ENABLED(I2CPE_ENC_2_INVERT));
     #endif
     #ifdef I2CPE_ENC_2_EC_METHOD
       encoders[i].set_ec_method(I2CPE_ENC_2_EC_METHOD);
@@ -547,7 +547,7 @@ void I2CPositionEncodersMgr::init() {
       encoders[i].set_stepper_ticks(I2CPE_ENC_3_TICKS_REV);
     #endif
     #ifdef I2CPE_ENC_3_INVERT
-      encoders[i].set_inverted(I2CPE_ENC_3_INVERT);
+      encoders[i].set_inverted(ENABLED(I2CPE_ENC_3_INVERT));
     #endif
     #ifdef I2CPE_ENC_3_EC_METHOD
       encoders[i].set_ec_method(I2CPE_ENC_3_EC_METHOD);
@@ -576,7 +576,7 @@ void I2CPositionEncodersMgr::init() {
       encoders[i].set_stepper_ticks(I2CPE_ENC_4_TICKS_REV);
     #endif
     #ifdef I2CPE_ENC_4_INVERT
-      encoders[i].set_inverted(I2CPE_ENC_4_INVERT);
+      encoders[i].set_inverted(ENABLED(I2CPE_ENC_4_INVERT));
     #endif
     #ifdef I2CPE_ENC_4_EC_METHOD
       encoders[i].set_ec_method(I2CPE_ENC_4_EC_METHOD);
@@ -605,7 +605,7 @@ void I2CPositionEncodersMgr::init() {
       encoders[i].set_stepper_ticks(I2CPE_ENC_5_TICKS_REV);
     #endif
     #ifdef I2CPE_ENC_5_INVERT
-      encoders[i].set_inverted(I2CPE_ENC_5_INVERT);
+      encoders[i].set_inverted(ENABLED(I2CPE_ENC_5_INVERT));
     #endif
     #ifdef I2CPE_ENC_5_EC_METHOD
       encoders[i].set_ec_method(I2CPE_ENC_5_EC_METHOD);
@@ -634,7 +634,7 @@ void I2CPositionEncodersMgr::init() {
       encoders[i].set_stepper_ticks(I2CPE_ENC_6_TICKS_REV);
     #endif
     #ifdef I2CPE_ENC_6_INVERT
-      encoders[i].set_inverted(I2CPE_ENC_6_INVERT);
+      encoders[i].set_inverted(ENABLED(I2CPE_ENC_6_INVERT));
     #endif
     #ifdef I2CPE_ENC_6_EC_METHOD
       encoders[i].set_ec_method(I2CPE_ENC_6_EC_METHOD);
@@ -756,7 +756,7 @@ int8_t I2CPositionEncodersMgr::parse() {
     if (!parser.has_value()) {
       SERIAL_ECHOLNPGM("?A seen, but no address specified! [30-200]");
       return I2CPE_PARSE_ERR;
-    };
+    }
 
     I2CPE_addr = parser.value_byte();
     if (!WITHIN(I2CPE_addr, 30, 200)) { // reserve the first 30 and last 55
@@ -775,7 +775,7 @@ int8_t I2CPositionEncodersMgr::parse() {
     if (!parser.has_value()) {
       SERIAL_ECHOLNPGM("?I seen, but no index specified! [0-", I2CPE_ENCODER_CNT - 1, "]");
       return I2CPE_PARSE_ERR;
-    };
+    }
 
     I2CPE_idx = parser.value_byte();
     if (I2CPE_idx >= I2CPE_ENCODER_CNT) {
@@ -791,7 +791,7 @@ int8_t I2CPositionEncodersMgr::parse() {
   I2CPE_anyaxis = parser.seen_axis();
 
   return I2CPE_PARSE_OK;
-};
+}
 
 /**
  * M860:  Report the position(s) of position encoder module(s).
@@ -934,7 +934,7 @@ void I2CPositionEncodersMgr::M864() {
     if (!parser.has_value()) {
       SERIAL_ECHOLNPGM("?S seen, but no address specified! [30-200]");
       return;
-    };
+    }
 
     newAddress = parser.value_byte();
     if (!WITHIN(newAddress, 30, 200)) {

@@ -32,7 +32,7 @@
 
 #if EXTRUDERS > 1 || E_STEPPERS > 1
   #error "E4d@box only supports one E Stepper. Comment out this line to continue."
-#elif HOTENDS > 1
+#elif HAS_MULTI_HOTEND
   #error "E4d@box only supports one hotend / E-stepper. Comment out this line to continue."
 #endif
 
@@ -41,18 +41,13 @@
 #define DEFAULT_MACHINE_NAME  BOARD_INFO_NAME
 
 //
-// Disable I2S stepper stream
-//
-#undef I2S_STEPPER_STREAM
-
-//
 // Redefine I2S for ESP32
 //
 #undef I2S_WS
-#define I2S_WS                                23
 #undef I2S_BCK
-#define I2S_BCK                               22
 #undef I2S_DATA
+#define I2S_WS                                23
+#define I2S_BCK                               22
 #define I2S_DATA                              21
 
 //

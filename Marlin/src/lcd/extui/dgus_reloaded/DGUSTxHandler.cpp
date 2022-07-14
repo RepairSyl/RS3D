@@ -275,7 +275,7 @@ void DGUSTxHandler::TempMax(DGUS_VP &vp) {
     case DGUS_Addr::TEMP_Max_H0:
       temp = HEATER_0_MAXTEMP - HOTEND_OVERSHOOT;
       break;
-    #if HOTENDS > 1
+    #if HAS_MULTI_HOTEND
       case DGUS_Addr::TEMP_Max_H1:
         temp = HEATER_1_MAXTEMP - HOTEND_OVERSHOOT;
         break;
@@ -341,8 +341,8 @@ void DGUSTxHandler::ABLGrid(DGUS_VP &vp) {
   int16_t fixed;
 
   for (int i = 0; i < DGUS_LEVEL_GRID_SIZE; i++) {
-    point.x = i % GRID_MAX_POINTS_X;
-    point.y = i / GRID_MAX_POINTS_X;
+    point.x = i % (GRID_MAX_POINTS_X);
+    point.y = i / (GRID_MAX_POINTS_X);
     fixed = dgus_display.ToFixedPoint<float, int16_t, 3>(ExtUI::getMeshPoint(point));
     data[i] = Swap16(fixed);
   }
@@ -428,7 +428,7 @@ void DGUSTxHandler::PIDKp(DGUS_VP &vp) {
       case DGUS_Data::Heater::H0:
         value = ExtUI::getPIDValues_Kp(ExtUI::E0);
         break;
-      #if HOTENDS > 1
+      #if HAS_MULTI_HOTEND
         case DGUS_Data::Heater::H1:
           value = ExtUI::getPIDValues_Kp(ExtUI::E1);
           break;
@@ -454,7 +454,7 @@ void DGUSTxHandler::PIDKi(DGUS_VP &vp) {
       case DGUS_Data::Heater::H0:
         value = ExtUI::getPIDValues_Ki(ExtUI::E0);
         break;
-      #if HOTENDS > 1
+      #if HAS_MULTI_HOTEND
         case DGUS_Data::Heater::H1:
           value = ExtUI::getPIDValues_Ki(ExtUI::E1);
           break;
@@ -480,7 +480,7 @@ void DGUSTxHandler::PIDKd(DGUS_VP &vp) {
       case DGUS_Data::Heater::H0:
         value = ExtUI::getPIDValues_Kd(ExtUI::E0);
         break;
-      #if HOTENDS > 1
+      #if HAS_MULTI_HOTEND
         case DGUS_Data::Heater::H1:
           value = ExtUI::getPIDValues_Kd(ExtUI::E1);
           break;
